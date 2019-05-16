@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+ {% block heading %}
+ block head from outside
+ {% endblock %}
+
+
+{% block content %}
+
+<p>
+        this is in hello.html and not in base.html
+</p>
+
+{% endblock %}
+
+{% block auth %}
+<p> title : {{ title }} </p>
+<p> user : {{ user }} </p>
+<p> validation : {{ user.is_authenticated}} </p>
+<p>request.user : {{ request.user }}</p>
+<p>request.path : {{ request.path }}</p>
+
+
+{% endblock %}

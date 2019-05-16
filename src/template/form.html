@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if title%}
+    <h2>
+        {{ title }}
+    </h2>
+{% endif %}
+
+    <form action='.' method="POST"> {%  csrf_token %}
+        <input type="text" name="fullname">
+        <br>
+        <input type="text" name="email">
+        <br>
+        <textarea name="content" id="" cols="20" rows="10"></textarea>
+        <br>
+        <button type="submit">Submit</button>
+
+    </form>
+{% endblock %}

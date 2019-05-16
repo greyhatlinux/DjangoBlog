@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block heading %}
+about page
+{% endblock %}
+
+{% block content %}
+content from about pafe in about.html
+{% endblock %}
+
+
+{% block auth %}
+<p> title : {{ title }} </p>
+<p> user : {{ user }} </p>
+<p> validation : {{ user.is_authenticated}} </p>
+<p>request.user : {{ request.user }}</p>
+<p>request.path : {{ request.path }}</p>
+
+
+<!-- {% for var in my_list %}
+    <li>{{ var }}</li>
+    {% endfor %}            not working as intended -->
+
+
+{% if user.is_authenticated %}
+<h2>you are authenticated</h2>
+<h4>you're welcome here</h4>
+
+ {% else %}
+ <h2>you're not authorised</h2>
+{% endif %}
+
+{% endblock %}
